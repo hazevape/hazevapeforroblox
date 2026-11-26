@@ -2,9 +2,9 @@ local vape = {
 	ActiveBinds = {},
 	Categories = {},
 	GUIColor = {
-		Hue = 0.46,
-		Sat = 0.96,
-		Value = 0.52
+		Hue = 0.73,
+		Sat = 0.42,
+		Value = 0.92
 	},
 	HeldKeybinds = {},
 	Loaded = false,
@@ -90,7 +90,7 @@ end
 
 local function addCorner(parent, radius)
 	local corner = Instance.new('UICorner')
-	corner.CornerRadius = radius or UDim.new(0, 5)
+	corner.CornerRadius = radius or UDim.new(0, 8)
 	corner.Parent = parent
 
 	return corner
