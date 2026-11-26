@@ -11,7 +11,7 @@ end
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/hazevape/HazeVapeCompiled/'..readfile('newvape/profiles/commit.txt')..'/'..select(1, path:gsub('newvape/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/hazevape/HazeVapeCompiled/'..readfile('hazevape/profiles/commit.txt')..'/'..select(1, path:gsub('hazevape/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -34,7 +34,7 @@ local function wipeFolder(path)
 	end
 end
 
-for _, folder in {'newvape', 'newvape/games', 'newvape/profiles', 'newvape/assets', 'newvape/libraries', 'newvape/guis'} do
+for _, folder in {'hazevape', 'hazevape/games', 'hazevape/profiles', 'hazevape/assets', 'hazevape/libraries', 'hazevape/guis'} do
 	if not isfolder(folder) then
 		makefolder(folder)
 	end
@@ -50,19 +50,19 @@ if not shared.VapeDeveloper then
 	commit = commit and subbed:sub(commit + 13, commit + 52) or nil
 	commit = commit and #commit == 40 and commit or 'main'
 
-	if commit == 'main' or (isfile('newvape/profiles/commit.txt') and readfile('newvape/profiles/commit.txt') or '') ~= commit then
-		wipeFolder('newvape')
-		wipeFolder('newvape/games')
-		wipeFolder('newvape/guis')
-		wipeFolder('newvape/libraries')
+	if commit == 'main' or (isfile('hazevape/profiles/commit.txt') and readfile('hazevape/profiles/commit.txt') or '') ~= commit then
+		wipeFolder('hazevape')
+		wipeFolder('hazevape/games')
+		wipeFolder('hazevape/guis')
+		wipeFolder('hazevape/libraries')
 	end
 
-	if (isfile('newvape/profiles/asset.txt') and readfile('newvape/profiles/asset.txt') or '') ~= assetVer then
-		wipeFolder('newvape/assets')
+	if (isfile('hazevape/profiles/asset.txt') and readfile('hazevape/profiles/asset.txt') or '') ~= assetVer then
+		wipeFolder('hazevape/assets')
 	end
 
-	writefile('newvape/profiles/asset.txt', assetVer)
-	writefile('newvape/profiles/commit.txt', commit)
+	writefile('hazevape/profiles/asset.txt', assetVer)
+	writefile('hazevape/profiles/commit.txt', commit)
 end
 
-return loadstring(downloadFile('newvape/main.lua'), 'main')()
+return loadstring(downloadFile('hazevape/main.lua'), 'main')()
