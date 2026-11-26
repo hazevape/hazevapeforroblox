@@ -16,23 +16,23 @@ jobs:
     - name: Clone destination files
       uses: actions/checkout@v6
       with:
-        repository: 7GrandDadPGN/VapeCompiled
+        repository: hazevape/HazeVapeCompiled
         token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-        path: "./VapeCompiled"
+        path: "./HazeVapeCompiled"
 
     - name: Clone bundler
       uses: actions/checkout@v6
       with:
-        repository: 7GrandDadPGN/VapeBundler
-        path: "./VapeBundler"
+        repository: hazevape/HazeVapeBundler
+        path: "./HazeVapeBundler"
 
     - name: Copy bundler configuration
       run: |-
-        mv ./.github/workflows/workflowConfig.json ./VapeBundler/config.json
+        mv ./.github/workflows/workflowConfig.json ./HazeVapeBundler/config.json
 
     - name: Install node packages
       run: |-
-        cd ./VapeBundler
+        cd ./HazeVapeBundler
         npm i
 
     - name: Set up Node.js
@@ -40,7 +40,7 @@ jobs:
 
     - name: Run Bundler
       run: |-
-        node ./VapeBundler/index.js prod
+        node ./HazeVapeBundler/index.js prod
 
     - name: Setup git commit
       run: |-
@@ -49,7 +49,7 @@ jobs:
 
     - name: Push commit
       run: |-
-        cd ./VapeCompiled
+        cd ./HazeVapeCompiled
         git add .
         git commit -m "Updated Vape"
         git push origin

@@ -1,6 +1,6 @@
 # HazeVape for Roblox
 
-A fork of VapeV4ForRoblox with modified interface styling.
+A fork of hazevapeforroblox with modified interface styling.
 
 ## Contacts
 [Discord](https://discord.gg/VZEQJxMSnG)
@@ -28,7 +28,7 @@ If its not the supposed utility at fault, please try some troubleshooting steps.
 ## Developers & Credits
 [HazeVape](https://github.com/hazevape/hazevapeforroblox) - Fork branding and interface modifications.
 <br/>
-[7GrandDad](https://github.com/7GrandDadPGN) - Original creator and upstream maintainer of VapeV4ForRoblox - vaperoblox on Discord
+[7GrandDad](https://github.com/hazevape) - Original creator and upstream maintainer of hazevapeforroblox - vaperoblox on Discord
 <br/>
 [rce-incorporated](https://github.com/rce-incorporated/Fiu) - Luau bytecode disassembly with modifications
 <br/>
